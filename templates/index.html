@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para A Melhor Pessoa Do Mundo</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            max-width: 400px;
+            cursor: pointer; /* Indica que é clicável */
+            transition: transform 0.3s;
+        }
+        .container:hover { transform: scale(1.02); }
+        
+        h1 { color: #d63384; margin-bottom: 10px; }
+        p { font-size: 1.1em; line-height: 1.6; }
+        
+        .heart {
+            color: #d63384;
+            font-size: 50px;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Estilo da segunda tela (escondida no início) */
+        .hidden { display: none; }
+        .galeria img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 10px;
+            border: 3px solid white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="tela1" onclick="mudarTela()">
+        <div class="heart">❤️</div>
+        <h1>Eaee Meu Amor!</h1>
+        <p>Eu sei q eu ando meio sumido estudando programação, mas saiba que voce honey, é a melhor coisa q eu tive na minha vida, te amo melmel.</p>
+        <p><b>Você é a melhor parte do meu dia.</b></p>
+        <small>(Clique aqui para uma surpresa)</small>
+    </div>
+
+    <div class="container hidden" id="tela2">
+        <h1>Cartinha Virtual De Mateus Para Mel</h1>
+        <div class="galeria">
+            <img src="static/emoji.jpg">
+            <img src="static/snoop.jpg" >
+        </div>
+        <p><b>Para A Minha princesa Mel ✨</b><br>
+        Ana, Eu Mateus barbosa Barreto, te amo muito, desde o dia em que eu falei com Você, eu tinha certeza q eu te amava.
+    eu sei que eu estou meio "sumido", Mas a partir de agora, vou me esforçar mais pra estar presente em sua vida e te amar cada dia mais.
+Prometo estar aqui sempre que você precisar. TEAMO</p>
+        <button onclick="location.reload()" style="margin-top:20px; border:none; background:#d63384; color:white; padding:10px; border-radius:10px; cursor:pointer;">Voltar</button>
+    </div>
+    <script>
+        function mudarTela() {
+            document.getElementById('tela1').classList.add('hidden');
+            document.getElementById('tela2').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
